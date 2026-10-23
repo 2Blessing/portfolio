@@ -21,7 +21,8 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "switchLanguage": "Changer de langue",
-    "switchTo": "Passer en anglais"
+    "switchTo": "Passer en anglais",
+    "newTab": "(s'ouvre dans un nouvel onglet)"
   },
   "Footer": {
     "quickLinks": "Liens rapides",
@@ -32,10 +33,92 @@
   "Placeholder": {
     "soon": "Cette page arrive bientôt. Le contenu sera géré depuis Sanity."
   },
+  "Common": {
+    "present": "Aujourd'hui",
+    "empty": "Rien à afficher pour le moment."
+  },
   "Home": {
     "greeting": "Bonjour, je suis",
     "role": "Développeur Full Stack",
-    "pitch": "Étudiant à IRGIB Africa, je conçois des applications web modernes et je m'intéresse de près à l'intelligence artificielle."
+    "pitch": "Étudiant à IRGIB Africa, je conçois des applications web modernes et je m'intéresse de près à l'intelligence artificielle.",
+    "ctaProjects": "Voir mes projets",
+    "ctaCv": "Télécharger mon CV",
+    "ctaContact": "Me contacter",
+    "latestProjects": "Projets récents",
+    "latestProjectsIntro": "Une sélection de ce sur quoi j'ai travaillé dernièrement.",
+    "allProjects": "Voir tous les projets",
+    "latestPosts": "Derniers articles",
+    "latestPostsIntro": "Mes réflexions sur l'IA, le développement et ma vie professionnelle.",
+    "allPosts": "Voir tous les articles",
+    "testimonials": "Ils m'ont fait confiance"
+  },
+  "About": {
+    "intro": "Qui je suis, ce qui me motive et ce que j'aime faire.",
+    "noBio": "Ma présentation détaillée arrive bientôt.",
+    "interests": "Centres d'intérêt",
+    "languages": "Langues",
+    "ctaTitle": "Envie d'en savoir plus ?",
+    "ctaText": "Consultez mon parcours et mon CV, ou écrivez-moi directement."
+  },
+  "Journey": {
+    "intro": "Mes formations, expériences, stages et certifications.",
+    "jumpTo": "Aller à la rubrique",
+    "kinds": {
+      "education": "Formations",
+      "experience": "Expériences",
+      "internship": "Stages",
+      "certification": "Certifications",
+      "languages": "Langues",
+      "interests": "Centres d'intérêt"
+    },
+    "verify": "Voir le justificatif"
+  },
+  "Skills": {
+    "intro": "Les technologies et savoir-faire que j'utilise, avec mon niveau actuel.",
+    "categories": {
+      "languages": "Langages",
+      "frameworks": "Frameworks",
+      "tools": "Outils",
+      "ai": "Intelligence artificielle",
+      "soft": "Compétences transversales"
+    },
+    "levelLabel": "Niveau {level} sur 5 : {name}",
+    "levels": {
+      "1": "Notions",
+      "2": "Débutant",
+      "3": "Intermédiaire",
+      "4": "Avancé",
+      "5": "Expert"
+    }
+  },
+  "Projects": {
+    "intro": "Applications, sites et expérimentations que j'ai réalisés.",
+    "featured": "À la une",
+    "view": "Voir le projet",
+    "demo": "Voir la démo",
+    "github": "Code source",
+    "technologies": "Technologies",
+    "gallery": "Galerie",
+    "back": "Tous les projets",
+    "notFound": "Projet introuvable"
+  },
+  "Posts": {
+    "readingTime": "{minutes} min de lecture",
+    "read": "Lire l'article"
+  },
+  "Cv": {
+    "intro": "Mon CV en ligne, et la version PDF à télécharger.",
+    "download": "Télécharger le CV (PDF)",
+    "open": "Ouvrir le PDF",
+    "noPdf": "La version PDF de mon CV sera bientôt disponible.",
+    "preview": "Aperçu du CV au format PDF",
+    "experience": "Expériences et stages",
+    "education": "Formations",
+    "certifications": "Certifications",
+    "skills": "Compétences",
+    "languages": "Langues",
+    "interests": "Centres d'intérêt",
+    "pdfVersion": "Version PDF"
   },
   "NotFound": {
     "title": "Page introuvable",

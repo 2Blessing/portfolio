@@ -21,7 +21,8 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "switchLanguage": "Change language",
-    "switchTo": "Switch to French"
+    "switchTo": "Switch to French",
+    "newTab": "(opens in a new tab)"
   },
   "Footer": {
     "quickLinks": "Quick links",
@@ -32,10 +33,92 @@
   "Placeholder": {
     "soon": "This page is coming soon. Its content will be managed from Sanity."
   },
+  "Common": {
+    "present": "Present",
+    "empty": "Nothing to show yet."
+  },
   "Home": {
     "greeting": "Hi, I'm",
     "role": "Full Stack Developer",
-    "pitch": "Student at IRGIB Africa, I build modern web applications and I'm deeply interested in artificial intelligence."
+    "pitch": "Student at IRGIB Africa, I build modern web applications and I'm deeply interested in artificial intelligence.",
+    "ctaProjects": "See my projects",
+    "ctaCv": "Download my resume",
+    "ctaContact": "Contact me",
+    "latestProjects": "Recent projects",
+    "latestProjectsIntro": "A selection of what I've been working on lately.",
+    "allProjects": "See all projects",
+    "latestPosts": "Latest articles",
+    "latestPostsIntro": "My thoughts on AI, software development and my professional life.",
+    "allPosts": "See all articles",
+    "testimonials": "What people say"
+  },
+  "About": {
+    "intro": "Who I am, what drives me and what I enjoy doing.",
+    "noBio": "My detailed introduction is coming soon.",
+    "interests": "Interests",
+    "languages": "Languages",
+    "ctaTitle": "Want to know more?",
+    "ctaText": "Check out my journey and resume, or write to me directly."
+  },
+  "Journey": {
+    "intro": "My education, experience, internships and certifications.",
+    "jumpTo": "Jump to section",
+    "kinds": {
+      "education": "Education",
+      "experience": "Experience",
+      "internship": "Internships",
+      "certification": "Certifications",
+      "languages": "Languages",
+      "interests": "Interests"
+    },
+    "verify": "View credential"
+  },
+  "Skills": {
+    "intro": "The technologies and abilities I use, with my current level.",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "tools": "Tools",
+      "ai": "Artificial intelligence",
+      "soft": "Soft skills"
+    },
+    "levelLabel": "Level {level} out of 5: {name}",
+    "levels": {
+      "1": "Basics",
+      "2": "Beginner",
+      "3": "Intermediate",
+      "4": "Advanced",
+      "5": "Expert"
+    }
+  },
+  "Projects": {
+    "intro": "Applications, websites and experiments I've built.",
+    "featured": "Featured",
+    "view": "View project",
+    "demo": "Live demo",
+    "github": "Source code",
+    "technologies": "Technologies",
+    "gallery": "Gallery",
+    "back": "All projects",
+    "notFound": "Project not found"
+  },
+  "Posts": {
+    "readingTime": "{minutes} min read",
+    "read": "Read article"
+  },
+  "Cv": {
+    "intro": "My resume online, and the PDF version to download.",
+    "download": "Download resume (PDF)",
+    "open": "Open the PDF",
+    "noPdf": "The PDF version of my resume will be available soon.",
+    "preview": "Resume preview (PDF)",
+    "experience": "Experience and internships",
+    "education": "Education",
+    "certifications": "Certifications",
+    "skills": "Skills",
+    "languages": "Languages",
+    "interests": "Interests",
+    "pdfVersion": "PDF version"
   },
   "NotFound": {
     "title": "Page not found",

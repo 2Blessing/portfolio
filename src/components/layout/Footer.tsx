@@ -37,10 +37,13 @@ export async function Footer() {
           </ul>
         </nav>
 
-        <div>
-          <h2 className="text-sm font-semibold">{t("Footer.social")}</h2>
-          <SocialLinks links={profile?.socialLinks ?? []} className="mt-3" />
-        </div>
+        {/* Affiché seulement si au moins un réseau est renseigné dans le Profil */}
+        {profile?.socialLinks && profile.socialLinks.length > 0 && (
+          <div>
+            <h2 className="text-sm font-semibold">{t("Footer.social")}</h2>
+            <SocialLinks links={profile.socialLinks} className="mt-3" />
+          </div>
+        )}
       </Container>
 
       <div className="border-t border-border">
