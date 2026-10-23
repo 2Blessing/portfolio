@@ -4,7 +4,7 @@
 > Légende : ✅ fait · 🔄 en cours · ⏳ à faire · ⏸️ en attente (action du propriétaire)
 
 **Dernière mise à jour :** 23/10/2026
-**Phase actuelle :** Phase 2 (Sanity) 🔄 : code écrit, en attente du Project ID Sanity pour tester.
+**Phase actuelle :** Phase 2 (Sanity) 🔄 : code commité ; le propriétaire remplit son Profil pour tester.
 
 ---
 
@@ -19,7 +19,7 @@
 | Versions | Next.js 16.4.3, React 19.3, Tailwind v4, next-intl 4.14, next-themes 0.4 |
 
 ## Comptes à créer (propriétaire)
-- ✅ Compte Sanity créé · ⏸️ projet `portfolio` à créer sur sanity.io/manage → Project ID
+- ✅ Sanity : projet `portfolio`, ID `uvbbv2dh`, dataset `production` (public)
 - ⏸️ GitHub : nécessaire pour la Phase 7 (ou avant, pour sauvegarder le code)
 - ⏸️ Formspree : nécessaire pour la Phase 5
 - ⏸️ Vercel : nécessaire pour la Phase 7 (se connecter avec GitHub)
@@ -48,9 +48,11 @@
 - ✅ Lecture : `client.ts`, `fetch.ts` (`"use cache"` + `cacheTag(type)` + `cacheLife("hours")`), `image.ts` (`urlFor`), `queries.ts` (GROQ avec repli FR), `data.ts`, `types.ts`
 - ✅ Site branché : accueil (nom, titre, accroche, photo du Profil), pied de page (nom + réseaux sociaux du Profil, icônes react-icons)
 - ✅ `tsc` et `lint` passent
-- 🔄 `.env.local` écrit avec l'ID `orstvddoj` (9 caractères : à confirmer, l'API répond « dataset production introuvable ») · ⏸️ vérifier ID + dataset sur sanity.io/manage, puis `build`, ouverture de `/studio`, ajout de l'origine CORS `http://localhost:3000`
+- ✅ Projet Sanity `uvbbv2dh`, dataset `production` (public) → `.env.local` ; `build` OK, `/studio` répond
+- ✅ Cache Sanity de quelques secondes en `npm run dev` (sinon 1 h, en attendant le webhook)
+- ⏸️ Propriétaire : ajouter l'origine CORS `http://localhost:3000` (avec identifiants) au premier lancement du Studio
 - ⏳ Test : remplir le Profil dans le Studio → le voir sur l'accueil
-- ⏳ Commit Phase 2
+- ✅ Commits Phase 2 (schémas, Studio, connexion)
 
 ## Phase 3 : Pages ⏳
 - ⏳ Requêtes GROQ et types pour projets, parcours, compétences, témoignages (à ajouter dans `queries.ts` / `types.ts` / `data.ts`)

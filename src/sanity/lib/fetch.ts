@@ -24,7 +24,8 @@ export async function sanityFetch<T>({
   tags: string[];
 }): Promise<T> {
   "use cache";
-  cacheLife(isDev ? "seconds" : "hours");
+  if (isDev) cacheLife("seconds");
+  else cacheLife("hours");
   cacheTag(...tags);
   return client.fetch<T>(query, params);
 }
