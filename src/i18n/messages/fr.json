@@ -1,0 +1,45 @@
+{
+  "Meta": {
+    "siteName": "TCHABI Odilon",
+    "title": "TCHABI Odilon · Développeur Full Stack",
+    "description": "Portfolio et blog de TCHABI Odilon, développeur Full Stack étudiant à IRGIB Africa, passionné par l'intelligence artificielle."
+  },
+  "Nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "journey": "Parcours",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "cv": "CV",
+    "blog": "Blog",
+    "contact": "Contact",
+    "mainLabel": "Navigation principale"
+  },
+  "A11y": {
+    "skipToContent": "Aller au contenu principal",
+    "toggleTheme": "Basculer entre le mode clair et le mode sombre",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "switchLanguage": "Changer de langue",
+    "switchTo": "Passer en anglais"
+  },
+  "Footer": {
+    "quickLinks": "Liens rapides",
+    "social": "Réseaux",
+    "rights": "Tous droits réservés.",
+    "tagline": "Développeur Full Stack · Passionné d'IA"
+  },
+  "Placeholder": {
+    "soon": "Cette page arrive bientôt. Le contenu sera géré depuis Sanity."
+  },
+  "Home": {
+    "greeting": "Bonjour, je suis",
+    "role": "Développeur Full Stack",
+    "pitch": "Étudiant à IRGIB Africa, je conçois des applications web modernes et je m'intéresse de près à l'intelligence artificielle."
+  },
+  "NotFound": {
+    "title": "Page introuvable",
+    "text": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "back": "Retour à l'accueil"
+  }
+}

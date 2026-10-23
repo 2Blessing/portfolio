@@ -1,0 +1,45 @@
+{
+  "Meta": {
+    "siteName": "TCHABI Odilon",
+    "title": "TCHABI Odilon · Full Stack Developer",
+    "description": "Portfolio and blog of TCHABI Odilon, Full Stack developer and student at IRGIB Africa, passionate about artificial intelligence."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "journey": "Journey",
+    "skills": "Skills",
+    "projects": "Projects",
+    "cv": "Resume",
+    "blog": "Blog",
+    "contact": "Contact",
+    "mainLabel": "Main navigation"
+  },
+  "A11y": {
+    "skipToContent": "Skip to main content",
+    "toggleTheme": "Toggle between light and dark mode",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchLanguage": "Change language",
+    "switchTo": "Switch to French"
+  },
+  "Footer": {
+    "quickLinks": "Quick links",
+    "social": "Social",
+    "rights": "All rights reserved.",
+    "tagline": "Full Stack Developer · AI enthusiast"
+  },
+  "Placeholder": {
+    "soon": "This page is coming soon. Its content will be managed from Sanity."
+  },
+  "Home": {
+    "greeting": "Hi, I'm",
+    "role": "Full Stack Developer",
+    "pitch": "Student at IRGIB Africa, I build modern web applications and I'm deeply interested in artificial intelligence."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for doesn't exist or has been moved.",
+    "back": "Back to home"
+  }
+}
