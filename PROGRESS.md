@@ -4,7 +4,7 @@
 > Légende : ✅ fait · 🔄 en cours · ⏳ à faire · ⏸️ en attente (action du propriétaire)
 
 **Dernière mise à jour :** 23/10/2026
-**Phase actuelle :** Phase 1 terminée, **en attente de validation** avant la Phase 2.
+**Phase actuelle :** Phase 2 (Sanity) 🔄 : code écrit, en attente du Project ID Sanity pour tester.
 
 ---
 
@@ -19,14 +19,14 @@
 | Versions | Next.js 16.4.3, React 19.3, Tailwind v4, next-intl 4.14, next-themes 0.4 |
 
 ## Comptes à créer (propriétaire)
-- ⏸️ Sanity (sanity.io) : nécessaire pour la **Phase 2**
+- ✅ Compte Sanity créé · ⏸️ projet `portfolio` à créer sur sanity.io/manage → Project ID
 - ⏸️ GitHub : nécessaire pour la Phase 7 (ou avant, pour sauvegarder le code)
 - ⏸️ Formspree : nécessaire pour la Phase 5
 - ⏸️ Vercel : nécessaire pour la Phase 7 (se connecter avec GitHub)
 
 ---
 
-## Phase 1 : Initialisation et mise en page ✅
+## Phase 1 : Initialisation et mise en page ✅ (validée)
 - ✅ Projet Next.js 16 + TypeScript + Tailwind v4 + ESLint (create-next-app), Git initialisé
 - ✅ `.gitignore` (ignore `.env*` sauf `.env.example`), `.env.example`, `README.md`, `CLAUDE.md`, `PROGRESS.md`
 - ✅ Bilingue : `src/i18n/` (routing, navigation, request), `src/proxy.ts`, traductions `messages/fr.json` et `en.json`
@@ -40,16 +40,20 @@
 
 **Comment tester :** `npm run dev` → http://localhost:3000 (redirige vers `/fr`). Tester le menu, le bouton FR/EN, le bouton soleil/lune, le menu mobile (outils développeur, mode téléphone), une URL inconnue (`/fr/xyz`).
 
-## Phase 2 : Sanity ⏳
-- ⏳ Créer le projet Sanity (`npx sanity login`, puis init) → `NEXT_PUBLIC_SANITY_PROJECT_ID`
-- ⏳ Studio intégré sur `/studio` (layout racine séparé dans `src/app/studio/`)
-- ⏳ Types utilitaires : `localeString`, `localeText`, `localeBlockContent`
-- ⏳ Schémas : profile (unique), siteSettings (unique), journeyEntry, skill, project, post, category, testimonial
-- ⏳ Organisation du Studio (structure.ts), client, helper images, requêtes GROQ avec tags
-- ⏳ Afficher les données du Profil sur l'accueil (test de connexion)
-- ⏳ Réseaux sociaux du pied de page depuis le Profil
+## Phase 2 : Sanity 🔄
+- ✅ Paquets : sanity 6, next-sanity 13, @sanity/image-url, @sanity/vision, @sanity/code-input, @sanity/locale-fr-fr (Studio en français), styled-components, react-icons
+- ✅ Briques : `localeString`, `localeText`, `localeBlockContent`, `blockContent` (titres, listes, liens, images, code), `imageWithAlt` ; validation `frRequired`
+- ✅ Schémas : profile (unique), siteSettings (unique), journeyEntry, skill, project, post, category, testimonial (`src/sanity/schemaTypes/`)
+- ✅ Studio : `sanity.config.ts`, `sanity.cli.ts`, menu `src/sanity/structure.ts`, route `src/app/studio/[[...tool]]` (layout racine séparé)
+- ✅ Lecture : `client.ts`, `fetch.ts` (`"use cache"` + `cacheTag(type)` + `cacheLife("hours")`), `image.ts` (`urlFor`), `queries.ts` (GROQ avec repli FR), `data.ts`, `types.ts`
+- ✅ Site branché : accueil (nom, titre, accroche, photo du Profil), pied de page (nom + réseaux sociaux du Profil, icônes react-icons)
+- ✅ `tsc` et `lint` passent
+- 🔄 `.env.local` écrit avec l'ID `orstvddoj` (9 caractères : à confirmer, l'API répond « dataset production introuvable ») · ⏸️ vérifier ID + dataset sur sanity.io/manage, puis `build`, ouverture de `/studio`, ajout de l'origine CORS `http://localhost:3000`
+- ⏳ Test : remplir le Profil dans le Studio → le voir sur l'accueil
+- ⏳ Commit Phase 2
 
 ## Phase 3 : Pages ⏳
+- ⏳ Requêtes GROQ et types pour projets, parcours, compétences, témoignages (à ajouter dans `queries.ts` / `types.ts` / `data.ts`)
 - ⏳ Accueil complet (photo, boutons Projets / CV / Contact, 3 derniers projets, derniers articles, témoignages masquables)
 - ⏳ À propos · Parcours (frise) · Compétences (catégories + niveau) · Projets (liste + détail) · CV (en ligne + PDF)
 - ⏳ Composant d'animation au défilement (`Reveal`)

@@ -22,6 +22,8 @@ Next.js 16 (App Router, `cacheComponents` activé) · TypeScript strict · Tailw
   - Liens internes : importer `Link`, `usePathname`, etc. depuis `@/i18n/navigation`, **jamais** depuis `next/link`.
   - Contenu Sanity traduit avec des champs `{ fr, en }` ; si `en` est vide, on affiche `fr`.
 - **cacheComponents** : tout composant client qui lit l'URL (`usePathname`, `useSearchParams`, `useParams`) doit être dans `<Suspense>`. Les valeurs changeantes (`new Date()`, etc.) passent par `"use cache"`.
+- **Données Sanity** : toujours passer par `sanityFetch` (`src/sanity/lib/fetch.ts`) avec `tags` = types de documents lus. Requêtes dans `queries.ts` (traductions aplaties par `coalesce(x[$locale], x.fr)`), types dans `types.ts`, fonctions d'accès dans `data.ts`. Images : `urlFor()` + `next/image`.
+- **Schémas Sanity** : libellés en français ; champs traduits via `localeString` / `localeText` / `localeBlockContent` ; images via `imageWithAlt` ; Profil et Paramètres sont des documents uniques (ids `profile` et `siteSettings`).
 - **Couleurs** : uniquement via les variables de `src/app/globals.css` (`bg-background`, `bg-surface`, `text-foreground`, `text-muted`, `border-border`, `bg-accent`, `text-accent-foreground`…). Pas de couleurs Tailwind codées en dur.
 - **Mode sombre** : classe `dark` sur `<html>` (next-themes) ; variante Tailwind `dark:`.
 - **Polices** : Inter (texte, `font-sans`) et Plus Jakarta Sans (titres, `font-heading`).

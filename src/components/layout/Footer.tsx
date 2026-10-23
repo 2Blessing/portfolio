@@ -1,25 +1,27 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
+import { SocialLinks } from "@/components/shared/SocialLinks";
+import { getCurrentLocale } from "@/i18n/locale";
 import { navItems } from "@/lib/nav";
+import { getProfile } from "@/sanity/lib/data";
 
-/**
- * Pied de page : liens rapides, réseaux, droits.
- * Les réseaux sociaux viendront de Sanity (Profil) en Phase 2.
- */
+/** Pied de page : liens rapides, réseaux sociaux (depuis le Profil Sanity), droits. */
 export async function Footer() {
   const t = await getTranslations();
   const year = await getCurrentYear();
+  const profile = await getProfile(await getCurrentLocale());
+  const name = profile?.name ?? t("Meta.siteName");
 
   return (
     <footer className="mt-auto border-t border-border bg-surface">
       <Container className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <p className="font-heading text-lg font-bold">
-            {t("Meta.siteName")}
+            {name}
             <span className="text-accent">.</span>
           </p>
-          <p className="mt-2 text-sm text-muted">{t("Footer.tagline")}</p>
+          <p className="mt-2 text-sm text-muted">{profile?.headline ?? t("Footer.tagline")}</p>
         </div>
 
         <nav aria-label={t("Footer.quickLinks")}>
@@ -37,14 +39,13 @@ export async function Footer() {
 
         <div>
           <h2 className="text-sm font-semibold">{t("Footer.social")}</h2>
-          {/* Rempli depuis Sanity en Phase 2 */}
-          <p className="mt-3 text-sm text-muted">LinkedIn · GitHub · WhatsApp · Instagram</p>
+          <SocialLinks links={profile?.socialLinks ?? []} className="mt-3" />
         </div>
       </Container>
 
       <div className="border-t border-border">
         <Container className="py-6 text-center text-xs text-muted">
-          © {year} {t("Meta.siteName")}. {t("Footer.rights")}
+          © {year} {name}. {t("Footer.rights")}
         </Container>
       </div>
     </footer>
