@@ -1,5 +1,6 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 import { frRequired } from "../objects/locale";
+import { slugify, slugValidation } from "../objects/slug";
 
 /** Un projet du portfolio, avec sa page de détail. */
 export const project = defineType({
@@ -25,8 +26,8 @@ export const project = defineType({
       description: "Cliquer sur « Générer » pour la créer à partir du titre.",
       type: "slug",
       group: "main",
-      options: { source: "title.fr", maxLength: 80 },
-      validation: (Rule) => Rule.required(),
+      options: { source: "title.fr", maxLength: 80, slugify: (input) => slugify(input, 80) },
+      validation: slugValidation,
     }),
     defineField({
       name: "excerpt",

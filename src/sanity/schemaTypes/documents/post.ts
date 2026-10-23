@@ -1,5 +1,6 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 import { frRequired } from "../objects/locale";
+import { slugify, slugValidation } from "../objects/slug";
 
 /** Article de blog. Le temps de lecture est calculé automatiquement sur le site. */
 export const post = defineType({
@@ -18,8 +19,8 @@ export const post = defineType({
       title: "Adresse de l'article (slug)",
       description: "Cliquer sur « Générer » pour la créer à partir du titre.",
       type: "slug",
-      options: { source: "title.fr", maxLength: 96 },
-      validation: (Rule) => Rule.required(),
+      options: { source: "title.fr", maxLength: 96, slugify: (input) => slugify(input, 96) },
+      validation: slugValidation,
     }),
     defineField({
       name: "publishedAt",
