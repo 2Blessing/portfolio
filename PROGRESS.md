@@ -3,8 +3,8 @@
 > Journal de bord tenu à jour à chaque étape. Il permet de reprendre le travail sans relire tout le code.
 > Légende : ✅ fait · 🔄 en cours · ⏳ à faire · ⏸️ en attente (action du propriétaire)
 
-**Dernière mise à jour :** 23/10/2026
-**Phase actuelle :** Phase 3 (Pages) terminée, **en attente de validation** avant la Phase 4 (Blog).
+**Dernière mise à jour :** 28/10/2026
+**Phase actuelle :** Phase 4 (Blog) terminée, **en attente de validation** avant la Phase 5 (Contact + bilingue).
 
 ---
 
@@ -54,7 +54,7 @@
 - ✅ Test : Profil rempli dans le Studio et visible sur l'accueil
 - ✅ Commits Phase 2 (schémas, Studio, connexion)
 
-## Phase 3 : Pages ✅
+## Phase 3 : Pages ✅ (validée)
 - ✅ Requêtes GROQ testées sur les vraies données : projets (liste, 3 derniers, détail, slugs), parcours, compétences, témoignages, 3 derniers articles (avec temps de lecture calculé en GROQ) ; types et fonctions dans `data.ts`
 - ✅ Composants : `ButtonLink`/`ExternalButtonLink`, `PageHeader`, `SectionHeading`, `Badge`, `SanityImage` (next/image + `preload`), `RichText` (Portable Text + `prose`, images, blocs de code, liens), `ProjectCard`, `PostCard`, `TestimonialCard`, `Timeline`, `SkillList`
 - ✅ Animations au défilement : classe CSS `reveal` (`animation-timeline: view()`, sans JavaScript, désactivée si `prefers-reduced-motion`)
@@ -68,8 +68,15 @@
 - ✅ Pied de page : rubrique « Réseaux » masquée si aucun réseau ; couleur `--success` ajoutée
 - ✅ Vérifié : tsc, lint, build (36 pages) ; captures d'écran ordinateur + mobile (Edge headless)
 
-## Phase 4 : Blog ⏳
-- ⏳ Liste paginée, filtre par catégorie, page article, temps de lecture, date, boutons de partage
+## Phase 4 : Blog ✅
+- ✅ Routes pré-rendues (pas de `searchParams`) : `/blog`, `/blog/page/[n]`, `/blog/category/[slug]`, `/blog/category/[slug]/page/[n]`, `/blog/[slug]`
+- ✅ Requêtes : page d'articles + total (`POSTS_PAGE_QUERY`, filtre `$category`), catégories non vides avec nombre d'articles, article complet + 3 autres articles, slugs ; `POSTS_PER_PAGE = 6` dans `data.ts`
+- ✅ Composants `src/components/blog/` : `BlogListing` (+ `parsePageParam`, `countPages`, `blogListingMetadata`), `CategoryFilter` (liens, `aria-current`), `Pagination` (précédent/suivant/numéros, `rel=prev/next`), `ShareButtons` (LinkedIn, WhatsApp, X) + `CopyLinkButton` (copie + partage natif du téléphone, annonce `aria-live`)
+- ✅ Page article : catégories cliquables, titre, résumé, date, temps de lecture, image, contenu riche, partage, « À lire aussi » ; métadonnées Open Graph `article`
+- ✅ `src/lib/site.ts` : `siteUrl` / `absoluteUrl` (liens de partage complets, via `NEXT_PUBLIC_SITE_URL`)
+- ✅ Studio : slug d'article interdit pour `page` et `category` ; regex des accents remplacée par `\p{M}` (lisible)
+- ✅ Vérifié : tsc, lint, build (58 pages), routes et codes HTTP, captures ordinateur + mobile FR/EN
+- ⏸️ À tester avec plus de contenu : pagination (7+ articles) et filtre (articles liés à des catégories)
 
 ## Phase 5 : Contact et bilingue ⏳
 - ⏳ Formulaire (zod, Server Action, Formspree), champ piège, limitation d'envois, bouton WhatsApp, réseaux
@@ -88,9 +95,10 @@
 
 ## Points ouverts / à surveiller
 - **Page 404 (URL inconnue)** : avec `cacheComponents`, le HTML initial est une coquille vide et le contenu 404 (traduit, avec en-tête et pied de page) s'affiche une fois le JavaScript chargé. Le code HTTP est bien 404 et la page n'est pas indexée. À revoir en Phase 6 si besoin.
+- **Première visite d'une adresse inconnue** (ex. `/fr/blog/xyz`) : code 200 au lieu de 404 (streaming de Next : le statut part avant le `notFound()`), puis 404 aux visites suivantes. La page 404 s'affiche quand même, avec `noindex`. À revoir en Phase 6.
+- Les liens de partage utilisent `NEXT_PUBLIC_SITE_URL` : à régler sur l'adresse Vercel en Phase 7 (sinon ils pointent vers localhost).
 - **npm audit** signale 5 vulnérabilités « high » dans des dépendances de développement de create-next-app. À revoir avant le déploiement (Phase 7), sans `--force`.
 - **Données de test** dans Sanity : le slug du projet (`mypressing;com`) est invalide → le régénérer dans le Studio (bouton « Générer »). Idem slug de la catégorie (`QDFD`).
-- Les cartes d'articles pointent vers `/blog/[slug]`, page créée en Phase 4 (404 en attendant).
 - Captures mobiles : Edge headless ne descend pas sous ~500 px de large ; tester à 390 px dans les outils de développement.
 - `AGENTS.md` est régénéré par `next dev` (règles Next.js pour les agents) : le garder dans Git.
 

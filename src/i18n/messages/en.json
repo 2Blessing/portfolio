@@ -120,6 +120,33 @@
     "interests": "Interests",
     "pdfVersion": "PDF version"
   },
+  "Blog": {
+    "intro": "Articles about artificial intelligence, web development and my professional life.",
+    "filterLabel": "Filter by category",
+    "all": "All",
+    "empty": "No articles yet. Come back soon!",
+    "back": "All articles",
+    "morePosts": "Read also",
+    "publishedOn": "Published on",
+    "categoryTitle": "Articles: {category}",
+    "pageTitle": "Blog, page {page}"
+  },
+  "Pagination": {
+    "label": "Pagination",
+    "previous": "Previous page",
+    "next": "Next page",
+    "page": "Page {page}",
+    "status": "Page {page} of {total}"
+  },
+  "Share": {
+    "title": "Share this article",
+    "linkedin": "Share on LinkedIn",
+    "whatsapp": "Share on WhatsApp",
+    "x": "Share on X",
+    "copy": "Copy link",
+    "copied": "Link copied!",
+    "native": "Share…"
+  },
   "NotFound": {
     "title": "Page not found",
     "text": "The page you are looking for doesn't exist or has been moved.",

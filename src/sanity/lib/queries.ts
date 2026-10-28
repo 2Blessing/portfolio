@@ -126,3 +126,35 @@ export const TESTIMONIALS_QUERY = defineQuery(`*[_type == "testimonial"] | order
 // Les 3 derniers articles (accueil)
 export const LATEST_POSTS_QUERY = defineQuery(`*[_type == "post" && defined(slug.current)]
   | order(publishedAt desc)[0...3]{ ${postCardFields} }`);
+
+// Filtre commun de la liste du blog.
+// $category = "" pour tous les articles, sinon le slug d'une catégorie.
+const postFilter = /* groq */ `_type == "post" && defined(slug.current)
+  && ($category == "" || $category in categories[]->slug.current)`;
+
+// Une page d'articles ($start inclus, $end exclu) + le nombre total (pour la pagination)
+export const POSTS_PAGE_QUERY = defineQuery(`{
+  "posts": *[${postFilter}] | order(publishedAt desc)[$start...$end]{ ${postCardFields} },
+  "total": count(*[${postFilter}])
+}`);
+
+// Catégories qui contiennent au moins un article, avec leur nombre d'articles
+export const CATEGORIES_QUERY = defineQuery(`*[_type == "category" && defined(slug.current)]{
+  "title": coalesce(title[$locale], title.fr),
+  "slug": slug.current,
+  "description": coalesce(description[$locale], description.fr),
+  "count": count(*[_type == "post" && defined(slug.current) && references(^._id)])
+}[count > 0] | order(title asc)`);
+
+// Un article complet + 3 autres articles récents ("À lire aussi")
+export const POST_QUERY = defineQuery(`*[_type == "post" && slug.current == $slug][0]{
+  ${postCardFields},
+  "body": coalesce(body[$locale], body.fr),
+  "morePosts": *[_type == "post" && defined(slug.current) && slug.current != $slug]
+    | order(publishedAt desc)[0...3]{ ${postCardFields} }
+}`);
+
+// Adresses de tous les articles (pré-rendu au build)
+export const POST_SLUGS_QUERY = defineQuery(
+  `*[_type == "post" && defined(slug.current)].slug.current`,
+);

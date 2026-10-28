@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { PagePlaceholder } from "@/components/ui/PagePlaceholder";
+import { BlogListing, blogListingMetadata } from "@/components/blog/BlogListing";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Nav");
-  return { title: t("blog") };
+export function generateMetadata(): Promise<Metadata> {
+  return blogListingMetadata(1);
 }
 
-// Contenu réel en Phase 3+ (données Sanity).
-export default function Page() {
-  return <PagePlaceholder pageKey="blog" />;
+/** /blog : première page de tous les articles. */
+export default function BlogPage() {
+  return <BlogListing page={1} />;
 }

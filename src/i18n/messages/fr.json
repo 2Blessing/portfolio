@@ -120,6 +120,33 @@
     "interests": "Centres d'intérêt",
     "pdfVersion": "Version PDF"
   },
+  "Blog": {
+    "intro": "Articles sur l'intelligence artificielle, le développement web et ma vie professionnelle.",
+    "filterLabel": "Filtrer par catégorie",
+    "all": "Tous",
+    "empty": "Aucun article pour le moment. Revenez bientôt !",
+    "back": "Tous les articles",
+    "morePosts": "À lire aussi",
+    "publishedOn": "Publié le",
+    "categoryTitle": "Articles : {category}",
+    "pageTitle": "Blog, page {page}"
+  },
+  "Pagination": {
+    "label": "Pagination",
+    "previous": "Page précédente",
+    "next": "Page suivante",
+    "page": "Page {page}",
+    "status": "Page {page} sur {total}"
+  },
+  "Share": {
+    "title": "Partager cet article",
+    "linkedin": "Partager sur LinkedIn",
+    "whatsapp": "Partager sur WhatsApp",
+    "x": "Partager sur X",
+    "copy": "Copier le lien",
+    "copied": "Lien copié !",
+    "native": "Partager…"
+  },
   "NotFound": {
     "title": "Page introuvable",
     "text": "La page que vous cherchez n'existe pas ou a été déplacée.",

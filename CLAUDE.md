@@ -24,6 +24,8 @@ Next.js 16 (App Router, `cacheComponents` activé) · TypeScript strict · Tailw
 - **cacheComponents** : tout composant client qui lit l'URL (`usePathname`, `useSearchParams`, `useParams`) doit être dans `<Suspense>`. Les valeurs changeantes (`new Date()`, etc.) passent par `"use cache"`.
 - **Données Sanity** : toujours passer par `sanityFetch` (`src/sanity/lib/fetch.ts`) avec `tags` = types de documents lus. Requêtes dans `queries.ts` (traductions aplaties par `coalesce(x[$locale], x.fr)`), types dans `types.ts`, fonctions d'accès dans `data.ts`. Images : `urlFor()` + `next/image`.
 - **Schémas Sanity** : libellés en français ; champs traduits via `localeString` / `localeText` / `localeBlockContent` ; images via `imageWithAlt` ; Profil et Paramètres sont des documents uniques (ids `profile` et `siteSettings`).
+- **Routes dynamiques** : `generateStaticParams` doit renvoyer au moins une valeur (sinon valeur bidon + `notFound()`). Une **page** ne transmet pas ses paramètres à ses sous-routes : la route la plus profonde fournit tous les paramètres. Pagination par routes (`/page/N`), jamais par `searchParams`.
+- **Regex** : écrire `/\p{M}/gu` pour retirer les accents. Éviter les séquences « backslash-u + code hexadécimal » : les outils d'édition les transforment en caractères bruts invisibles.
 - **Animations** : ajouter la classe CSS `reveal` (défilement, 100 % CSS). Pas de librairie d'animation.
 - **Images** : `next/image` utilise `preload` (et non `priority`, obsolète dans Next 16) ; composant `SanityImage`.
 - **Couleurs** : uniquement via les variables de `src/app/globals.css` (`bg-background`, `bg-surface`, `text-foreground`, `text-muted`, `border-border`, `bg-accent`, `text-accent-foreground`…). Pas de couleurs Tailwind codées en dur.

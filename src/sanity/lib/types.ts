@@ -116,3 +116,17 @@ export type PostCard = {
   categories: { title: string; slug: string }[] | null;
   readingTime: number;
 };
+
+export type PostsPage = { posts: PostCard[]; total: number };
+
+export type Category = {
+  title: string;
+  slug: string;
+  description: string | null;
+  count: number;
+};
+
+export type PostDetail = PostCard & {
+  body: RichText | null;
+  morePosts: PostCard[];
+};
