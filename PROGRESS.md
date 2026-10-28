@@ -20,7 +20,7 @@
 
 ## Comptes à créer (propriétaire)
 - ✅ Sanity : projet `portfolio`, ID `uvbbv2dh`, dataset `production` (public)
-- ⏸️ GitHub : nécessaire pour la Phase 7 (ou avant, pour sauvegarder le code)
+- ✅ GitHub : dépôt public https://github.com/2Blessing/portfolio (branche `main`), push après chaque étape
 - ⏸️ Formspree : nécessaire pour la Phase 5
 - ⏸️ Vercel : nécessaire pour la Phase 7 (se connecter avec GitHub)
 
@@ -106,4 +106,5 @@
 | Commit | Contenu |
 |---|---|
 | `3103eda` | Initialisation create-next-app |
+| 28/10/2026 | Code envoyé sur GitHub (`origin/main`) |
 | *(voir `git log`)* | Phase 1 |

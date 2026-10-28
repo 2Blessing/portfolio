@@ -6,7 +6,7 @@
 
 ## Méthode de travail
 - Avancer **phase par phase** (voir PROGRESS.md). Ne jamais commencer la phase suivante sans la validation du propriétaire.
-- **Un commit Git par étape terminée**, message clair en français (`feat:`, `fix:`, `chore:`, `docs:`).
+- **Un commit Git par étape terminée**, message clair en français (`feat:`, `fix:`, `chore:`, `docs:`), **puis `git push`** vers GitHub (`origin` = https://github.com/2Blessing/portfolio, branche `main`).
 - Avant de committer : `npm run lint` et `npm run build` doivent passer.
 - Le propriétaire a un niveau intermédiaire : code simple, lisible, commentaires utiles en français.
 - Next.js 16 diffère des versions plus anciennes : consulter `node_modules/next/dist/docs/` en cas de doute.
