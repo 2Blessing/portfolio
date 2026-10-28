@@ -27,7 +27,7 @@ export const project = defineType({
       type: "slug",
       group: "main",
       options: { source: "title.fr", maxLength: 80, slugify: (input) => slugify(input, 80) },
-      validation: slugValidation,
+      validation: slugValidation(),
     }),
     defineField({
       name: "excerpt",

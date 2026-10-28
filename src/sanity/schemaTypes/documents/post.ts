@@ -20,7 +20,7 @@ export const post = defineType({
       description: "Cliquer sur « Générer » pour la créer à partir du titre.",
       type: "slug",
       options: { source: "title.fr", maxLength: 96, slugify: (input) => slugify(input, 96) },
-      validation: slugValidation,
+      validation: slugValidation(["page", "category"]),
     }),
     defineField({
       name: "publishedAt",

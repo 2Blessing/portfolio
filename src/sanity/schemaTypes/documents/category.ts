@@ -19,7 +19,7 @@ export const category = defineType({
       title: "Adresse (slug)",
       type: "slug",
       options: { source: "title.fr", maxLength: 60, slugify: (input) => slugify(input, 60) },
-      validation: slugValidation,
+      validation: slugValidation(),
     }),
     defineField({ name: "description", title: "Description", type: "localeText" }),
   ],
